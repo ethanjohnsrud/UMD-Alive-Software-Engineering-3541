@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UMD Alive</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="aboutMe"><u>About Me</u></string>
+    <string name="myClubs"><u>My Clubs</u></string>
+
+    <string name="upEvents"><u>Upcoming Events</u></string>
+    <string name="clubMem"><u>Members</u></string>
+
+    <string name="message"><u>Type Message Here</u></string>
+    <string name="send">Send</string>
+    <string name="erase_all">Erase All</string>
+
+</resources>

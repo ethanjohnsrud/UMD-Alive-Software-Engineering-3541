@@ -1,0 +1,16 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<form action="/deleteHelper" method="post">
+    Search: <input type="text" name="search" /><input type="submit">
+</form>
+
+<h3>{{found}}</h3>
+
+
+{% endblock %}

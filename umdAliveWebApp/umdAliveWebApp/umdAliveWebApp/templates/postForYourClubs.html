@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<style>
+    .btn-group input {
+        background-color: #7a0018; /* Maroon background */
+        border: 1px solid #FFD75F; /* gold/yello border */
+        color: #FFD75F; /* Gold/yellow text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        width: 100%; /* Set a width if needed */
+        display: block; /* Make the buttons appear below each other */
+    }
+
+        .btn-group input:not(:last-child) {
+            border-bottom: none; /* Prevent double borders */
+        }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+        background-color: #3e8e41;
+    }
+</style>
+
+
+<div id="clubList" class="btn-group">
+
+</div>
+
+
+
+<p>
+    <script>
+        var text = '{{data}}';
+        var text = text.replace(/u&#39;/g, '"');
+        var text = text.replace(/&#39;/g, '"');
+        text = JSON.parse(text);
+        var count = '{{length}}';
+
+        //Creates the buttons for each club in the MongoDB
+        for (var i = 0; i < count; i++) {
+            //Creates the form with a action attribute
+            //This action will allow us to change the URL to the clubProfile
+            var x = document.createElement("FORM");
+            x.setAttribute("id", text[i]);
+            x.setAttribute("action", "/postHelper/" + text[i]);
+            document.getElementById("clubList").appendChild(x);
+
+            //Now that we have created a form action above the below code will
+            //Add a submit type button to that.
+            var y = document.createElement("INPUT");
+            y.setAttribute("type", "submit");
+            y.setAttribute("value", text[i]);
+            document.getElementById(text[i]).appendChild(y);
+        }
+
+
+    </script>
+</p>
+
+
+
+{% endblock %}

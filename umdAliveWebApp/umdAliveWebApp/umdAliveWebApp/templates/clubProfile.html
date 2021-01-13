@@ -1,0 +1,108 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+<h3>{{clubOwner}}</h3>
+<h3>{{ownerEmail}}</h3>
+<h3>{{description}}</h3>
+<h3>{{keywords}}</h3>
+
+<form action="/joinClub/{{cname}}">
+    <button type="submit" class="btn">Join this Club!</button>
+</form>
+
+
+<h3>Club Posts</h3>
+
+<pre id="postDisplay"><code>Display</code></pre>
+
+<div id="Posts">
+
+    <script>
+        //Pulls in JSON as an array
+        var arr = new Array();
+        {% for dat in data %}
+        arr.push('{{ dat }}');
+        {% endfor %}
+
+        // Cleans up the posts collection data
+        var text = '{{data}}';
+        text = text.replace(/u&#39;/g, '"');
+        text = text.replace(/&#39;/g, '"');
+        text = JSON.stringify(text);
+        text = JSON.parse(text);
+
+        // Finds number of posts
+        var count = (text.match(/description/g) || []).length;
+        output = ""
+
+        // Appends output to string for each even in club collection
+        for(i = count; i > 0; i--){
+        // Harken! For scary magic dwells within these lines
+        // This code works by iteratively parsing through the JSON
+        // file and appending a string based on the contents. It does
+        // this through using string searching to find the appropriate 
+        // key's location and then index manipulation to deduce the
+        // area with the corresponding value.     
+
+            // Finds event title
+            start = text.search("title") + 5 + 4
+            temp = text.substring(start)
+            end = start + temp.search(",") - 1
+            mes = text.substring(start, end)
+            title = mes
+
+            // Finds event description
+            start = text.search("description") + 11 + 4
+            temp = text.substring(start)
+            end = start + temp.search(",") - 1
+            mes = text.substring(start, end)
+            description = mes
+
+            // Finds event location
+            start = text.search("location") + 8 + 4
+            temp = text.substring(start)
+            end = start + temp.search(",") - 1
+            mes = text.substring(start, end)
+            loca = mes
+
+            // Finds event date
+            start = text.search("date") + 4 + 4
+            temp = text.substring(start)
+            end = start + temp.search(",") - 1
+            end -= 6 // Subtracting six to get rid of time
+            mes = text.substring(start, end)
+            dat = mes
+
+            // Create post given the current data
+            output += "Title : " + title + "\n"
+            output += "Description : " + description + "\n"
+            output += "Location : " + loca + "\n"
+            output += "Date : " + dat + "\n \n"
+
+            // Remove the post from the list of posts to process
+            start = text.indexOf("}")
+            text = text.substring(start + 1)
+        }
+        var postDisplay = document.getElementById('postDisplay');
+        postDisplay.innerHTML = output;
+
+    </script>
+
+</div>
+
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+{% endblock %}

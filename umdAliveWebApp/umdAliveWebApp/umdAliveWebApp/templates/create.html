@@ -1,0 +1,26 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="container">
+    <h2>Club Preferences</h2>
+    <p>Choose the following preferences for your club:</p>
+
+    <form action="/createSuccess" method="post">
+        <br>
+        <input type="text" name="clubName" placeholder="Enter club name..." required>
+        <br>
+        <input type="text" name="description" placeholder="Enter club description..." required>
+        <br>
+        <input type="text" name="keywords" placeholder="Enter club category..." value="Academic" required>
+        <input type="submit" value="Create Club">
+    </form>
+
+</div>
+<h3>{{ text }}</h3>
+
+
+{% endblock %}

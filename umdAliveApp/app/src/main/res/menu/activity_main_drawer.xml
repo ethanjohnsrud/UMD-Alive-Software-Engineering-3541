@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_create_club"
+            android:icon="@drawable/ic_add"
+            android:title="Create Club" />
+        <item
+            android:id="@+id/nav_all_clubs"
+            android:icon="@drawable/ic_menu_all_clubs"
+            android:title="All Clubs" />
+        <item
+            android:id="@+id/nav_group_chat"
+            android:icon="@drawable/ic_menu_group_chat"
+            android:title="Group Chat" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_menu_sign_out"
+            android:title="Sign Out" />
+    </group>
+
+</menu>

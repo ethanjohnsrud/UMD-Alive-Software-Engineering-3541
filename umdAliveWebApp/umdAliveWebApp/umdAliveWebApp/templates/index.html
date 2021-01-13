@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div style="height:500px" class="jumbotron">
+    <div class="padding">
+        <h1 align="right" style="color: white">UMD Alive</h1>
+        <p align="right" style="color: white" class="lead">
+            Explore. Connect. Grow.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Create and Explore</h2>
+        <p>
+            UMDAlive is an open-source project that drives to connect students by allowing them to create and join clubs. 
+            You may <a href="{{ url_for('allClubs') }}">browse though our catalog</a> of UMD clubs and find students that share your interests.
+            Don't see a club you want to join? Have a new idea? <a href="{{ url_for('create') }}">Create your own club!</a>
+        </p>
+        <p><a class="btn btn-default" href="{{ url_for('create') }}">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Stay Connected</h2>
+        <p>UMDAlive allows you to stay connected with your friends by having club based pages that provide a place to schedule events, 
+            communicate ideas, and just plain have fun. You can hop over to your <a href="{{ url_for('myClubs') }}">My Clubs </a> page to see the clubs you are 
+            engaged in, where you can check out the latest activity on your favorite club pages.</p>
+        <p><a class="btn btn-default" href="{{ url_for('allClubs') }}">Learn more &raquo;</a></p>
+    </div>
+    <div>
+        <h2>Follow UMD @</h2>
+        <div>
+            <a href="http://www.facebook.com/UMNDuluth/" class="fa fa-facebook"></a>
+            <a href="http://www.twitter.com/UMNDuluth" class="fa fa-twitter"></a>
+            <a href="http://www.instagram.com/umnduluth/" class="fa fa-instagram"></a>
+        </div>
+
+    </div>
+</div>
+
+<script src="//www.powr.io/powr.js?external-type=html"></script>
+<div class="powr-instagram-feed" id="1159ec5f_1521989770"></div>
+
+
+{% endblock %}

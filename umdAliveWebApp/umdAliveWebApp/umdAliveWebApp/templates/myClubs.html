@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+<style>
+    .btn-group input {
+        background-color: #7a0018; /* Maroon background */
+        border: 1px solid #FFD75F; /* gold/yello border */
+        color: #FFD75F; /* Gold/yellow text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        width: 100%; /* Set a width if needed */
+        display: block; /* Make the buttons appear below each other */
+    }
+
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #7a0018 !important;
+        color: #FFD75F !important; /* Gold/yellow text */
+        border: 1px solid #FFD75F !important; /* gold/yello border */
+    }
+</style>
+
+
+
+
+<div id="clubList">
+
+</div>
+
+
+
+<p>
+    <script>
+        var text = '{{data}}';
+        var text = text.replace(/u&#39;/g, '"');
+        var text = text.replace(/&#39;/g, '"');
+        text = JSON.parse(text);
+        var count = '{{length}}';
+
+        //Creates the buttons for each club in the MongoDB
+        for (var i = 0; i < count; i++) {
+            var div = document.createElement("div");
+            div.setAttribute("id", i);
+            div.setAttribute("class", "btn-group");
+
+
+            var form = document.createElement("FORM");
+            form.setAttribute("action", "/clubProfile/" + text[i]);
+
+            var y = document.createElement("button");
+            y.setAttribute("type", "submit");
+            y.setAttribute("class", "btn btn-primary");
+            t = document.createTextNode(text[i]);
+            y.appendChild(t);
+            form.appendChild(y);
+
+            var button2 = document.createElement("button");
+            button2.setAttribute("type", "button");
+            button2.setAttribute("class", "btn btn-primary dropdown-toggle");
+            button2.setAttribute("data-toggle", "dropdown")
+
+            var span = document.createElement("span");
+            span.setAttribute("class", "caret");
+            button2.appendChild(span);
+
+            form.appendChild(button2);
+
+            var ul = document.createElement("ul");
+            ul.setAttribute("class", "dropdown-menu");
+            ul.setAttribute("role", "menu");
+
+            var button3 = document.createElement("button");
+            button3.setAttribute("type", "submit");
+            button3.setAttribute("formaction", "/leaveClub/" + text[i]);
+            unfollow = document.createTextNode("Unfollow");
+            button3.appendChild(unfollow);
+            ul.appendChild(button3);
+
+            form.appendChild(ul);
+
+            div.appendChild(form);
+
+            filler = document.createElement("p");
+
+            document.getElementById("clubList").appendChild(div);
+            document.getElementById("clubList").appendChild(filler);
+
+
+        }
+
+
+    </script>
+</p>
+
+
+
+{% endblock %}

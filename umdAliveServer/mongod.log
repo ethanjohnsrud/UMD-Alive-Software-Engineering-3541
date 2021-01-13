@@ -1,0 +1,29 @@
+2018-03-22T08:09:57.594-0500 I CONTROL  [initandlisten] MongoDB starting : pid=15263 port=32893 dbpath=dbfile 64-bit host=ukko
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] db version v3.6.2
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c539420
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] modules: none
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] build environment:
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 32893 }, storage: { dbPath: "dbfile" }, systemLog: { destination: "file", logAppend: true, path: "mongod.log" } }
+2018-03-22T08:09:57.595-0500 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory dbfile not found., terminating
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] now exiting
+2018-03-22T08:09:57.595-0500 I CONTROL  [initandlisten] shutting down with code:100
+2018-03-22T08:10:12.572-0500 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] MongoDB starting : pid=15271 port=32893 dbpath=dbfile 64-bit host=ukko
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] db version v3.6.2
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c539420
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] modules: none
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] build environment:
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 32893 }, storage: { dbPath: "dbfile" }, systemLog: { destination: "file", logAppend: true, path: "mongod.log" } }
+2018-03-22T08:10:12.581-0500 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory dbfile not found., terminating
+2018-03-22T08:10:12.581-0500 I CONTROL  [initandlisten] now exiting
+2018-03-22T08:10:12.582-0500 I CONTROL  [initandlisten] shutting down with code:100

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Flask Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+
+    <style type="text/css">
+        .jumbotron {
+            margin-top: 20px;
+            background-image: url('../static/content/home.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center center;
+        }
+
+        div.padding {
+            padding-top: 50px;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+    </style>
+
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+            font-size: 14px;
+        }
+
+        #script-warning {
+            display: none;
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            padding: 0 10px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            color: red;
+        }
+
+        #loading {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">UMDAlive</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clubs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('allClubs') }}">All Clubs</a></li>
+                            <li><a href="{{ url_for('myClubs') }}">My Clubs</a></li>
+                            <li><a href="{{ url_for('searchClubs') }}">Club Search</a></li>
+                            <li><a href="{{ url_for('postForYourClubs') }}">Post For Your Club</a></li>
+                            <li><a href="{{ url_for('create') }}">Create a Club</a></li>
+                            <li><a href="{{ url_for('delete') }}">Delete a Club</a></li>
+                        </ul>
+                    <li><a href="{{ url_for('calendar') }}">Calendar</a></li>
+                    <li><a href="{{ url_for('searchClubs') }}">Search Clubs by Keyword</a></li>
+
+
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Communicate<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('share') }}">Share</a></li>
+                            <li><a href="{{ url_for('send') }}">Send</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="pull-right">
+                        <form action="/logout">
+                            <button type="submit" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-log-out"></span> Log out
+                            </button>
+                        </form>
+                    </li>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>{{title}}</h2>
+        <p>{{message}}</p>
+        <form action="/calendar">
+            <button type="submit">All Events</button>
+        </form>
+        <form action="/calendarMy">
+            <button type="submit">My Clubs Events</button>
+        </form>
+    </div>
+
+
+    <div class="container body-content">
+        <div class="body">
+            <div id='script-warning'>
+                Error getting data from <code>/data</code> endpoint.
+            </div>
+            <div id='loading'>loading...</div>
+            <div id='calendar'></div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} - Dysfunctional Programming</p>
+        </footer>
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    <link href="{{ url_for('static', filename='fullcalendar.min.css') }}" rel='stylesheet' />
+    <link href="{{ url_for('static', filename='fullcalendar.print.css') }}" rel='stylesheet' media='print' />
+    <script src="{{ url_for('static', filename='lib/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fullcalendar.min.js') }}"></script>
+    <script>
+        var sel = '{{selector}}';
+            $(document).ready(function () {
+                    $('#calendar').fullCalendar({
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        defaultDate: '2014-09-12',
+                        editable: true,
+                        eventLimit: true, // allow "more" link when too many events
+                        events: {
+                            url: 'dataMyClubs',
+                            error: function () {
+                                $('#script-warning').show();
+                            }
+                        },
+                        loading: function (bool) {
+                            $('#loading').toggle(bool);
+                        }
+                    });
+
+                    $('#calendar').fullCalendar('today');
+
+                    
+            });
+
+
+
+
+
+
+
+
+    </script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ChatActivity">
+
+    <ListView
+        android:id="@+id/chatDisplayBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        app:layout_constraintBottom_toTopOf="@+id/messageInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </ListView>
+
+    <LinearLayout android:focusable="true"
+        android:focusableInTouchMode="true" android:layout_width="0px"
+        android:layout_height="0px" />
+
+    <EditText
+        android:id="@+id/messageInput"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableBottom="@color/colorPrimary"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Message"
+        android:inputType="textMultiLine"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textCursorDrawable="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sendButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="SEND"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/messageInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/messageInput"
+        app:layout_constraintTop_toTopOf="@+id/messageInput" />
+
+    <Button
+        android:id="@+id/eraseAllButton"
+        android:layout_width="81dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="278dp"
+        android:layout_marginLeft="278dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/erase_all"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chatDisplayBox"
+        app:layout_constraintEnd_toEndOf="@+id/chatDisplayBox"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="invisible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

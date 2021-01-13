@@ -1,0 +1,32 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="container">
+    <h2>Club Preferences</h2>
+    <p>Choose the following preferences for your club:</p>
+
+    <form action="/postForYourClubsHelper/submit/{{club}}" method="post">
+        <br>
+        Title: <input type="text" name="title" placeholder="Enter Title of Event Here..." required>
+        <br>
+        Start Time: <input type="time" name="time" required>
+        <br>
+        Start Date: <input type="date" name="date" required>
+        <br>
+        Location: <input type="text" name="location" placeholder="Enter Location of Event Here..." required>
+        <br>
+        Description: <input type="text" name="description" placeholder="Enter Description of Event Here..." required>
+        <input type="submit" value="Create Post">
+    </form>
+
+
+
+</div>
+<h3>{{ text }}</h3>
+
+
+{% endblock %}

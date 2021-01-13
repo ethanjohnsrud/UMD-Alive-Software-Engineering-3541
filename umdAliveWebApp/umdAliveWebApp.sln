@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "umdAliveWebApp", "umdAliveWebApp\umdAliveWebApp.pyproj", "{1ADFC192-6D44-4FDF-B9A4-C28FD80A8858}"
+EndProject
+Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1ADFC192-6D44-4FDF-B9A4-C28FD80A8858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADFC192-6D44-4FDF-B9A4-C28FD80A8858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADFC192-6D44-4FDF-B9A4-C28FD80A8858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADFC192-6D44-4FDF-B9A4-C28FD80A8858}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5229F9A4-E613-42D8-8938-D17A1813278E}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

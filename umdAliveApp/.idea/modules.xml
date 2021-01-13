@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Desktop.SEProject.umdAliveApp.iml" filepath="$PROJECT_DIR$/Desktop.SEProject.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/Desktop.SEProject.umdAliveApp.app.iml" filepath="$PROJECT_DIR$/app/Desktop.SEProject.umdAliveApp.app.iml" group="umdAliveApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/Mitchell.Desktop.SEProject.umdAliveApp.iml" filepath="$PROJECT_DIR$/Mitchell.Desktop.SEProject.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/SEProject.umdAliveApp.iml" filepath="$PROJECT_DIR$/SEProject.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/SEProject.umdAliveApp.app.iml" filepath="$PROJECT_DIR$/app/SEProject.umdAliveApp.app.iml" group="umdAliveApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/UMDAliveAfterRESET_11_13_2019.umdAliveApp.iml" filepath="$PROJECT_DIR$/UMDAliveAfterRESET_11_13_2019.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/UMDAliveAfterRESET_11_13_2019.umdAliveApp.app.iml" filepath="$PROJECT_DIR$/app/UMDAliveAfterRESET_11_13_2019.umdAliveApp.app.iml" group="umdAliveApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/UMDAlive_Final.umdAliveApp.iml" filepath="$PROJECT_DIR$/UMDAlive_Final.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/UMDAlive_Final.umdAliveApp.app.iml" filepath="$PROJECT_DIR$/app/UMDAlive_Final.umdAliveApp.app.iml" group="umdAliveApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="umdAliveApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/csproject.umdAliveApp.iml" filepath="$PROJECT_DIR$/csproject.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/semProj.umdAliveApp.iml" filepath="$PROJECT_DIR$/semProj.umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/umdAliveApp.iml" filepath="$PROJECT_DIR$/umdAliveApp.iml" group="umdAliveApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/umdAliveApp.app.iml" filepath="$PROJECT_DIR$/app/umdAliveApp.app.iml" group="umdAliveApp/app" />
+    </modules>
+  </component>
+</project>
